@@ -8,6 +8,9 @@ import {
 export const metadata: Metadata = {
   title: "Unit Converter Global",
   description: "Fast, accurate unit conversions in 10 languages",
+  verification: {
+    google: "bYtU1NUr1KSo1e0UBMcxEKNFAY9YqmgVFlWWg05kxF0",
+  },
 };
 
 export default function RootPage() {
