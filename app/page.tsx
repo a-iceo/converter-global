@@ -26,6 +26,17 @@ export default function RootPage() {
         </span>
       </header>
       <main>
+        {/* Adsterra Native Banner (Leaderboard top) */}
+        <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
+          <script
+            async
+            data-cfasync="false"
+            src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
+            strategy="afterInteractive"
+          />
+          <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
+        </div>
+
         <div className="hero">
           <p className="hero-category-pill">🌍 {SUPPORTED_LANGS.length} languages · {CATEGORIES.length} categories</p>
           <h1>{ui.title.split(" ").map((w, i) =>
@@ -42,6 +53,27 @@ export default function RootPage() {
               {cat.label[lang]}
             </Link>
           ))}
+        </div>
+
+        {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
+        <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                atOptions = {
+                  'key' : '6914b26119906a83ee39c653659a84d5',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              `,
+            }}
+          />
+          <script
+            src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
+            strategy="afterInteractive"
+          />
         </div>
 
         <div className="popular-grid">

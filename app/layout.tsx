@@ -19,6 +19,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* Adsterra Social Bar */}
+        <script
+          src="https://pl29594822.effectivecpmnetwork.com/db/7e/91/db7e9195b032e7b8397e2a8601cbd164.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body>{children}</body>
     </html>

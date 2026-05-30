@@ -128,11 +128,15 @@ export default function Page({ params }: { params: Params }) {
 function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
   return (
     <PageShell lang={lang}>
-      {/* ── Adsterra: Leaderboard top ─────────────────────────────────────
-          PASTE YOUR ADSTERRA BANNER CODE BELOW:
-      ────────────────────────────────────────────────────────────────────── */}
+      {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        {/* <script async src="//your-adsterra-leaderboard-script.js"></script> */}
+        <script
+          async
+          data-cfasync="false"
+          src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
+          strategy="afterInteractive"
+        />
+        <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
       </div>
 
       <div className="hero">
@@ -178,11 +182,25 @@ function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
         })}
       </div>
 
-      {/* ── Adsterra: Rectangle mid-page ──────────────────────────────────
-          PASTE YOUR ADSTERRA 300x250 BANNER CODE BELOW:
-      ────────────────────────────────────────────────────────────────────── */}
-      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement">
-        {/* <script async src="//your-adsterra-rectangle-script.js"></script> */}
+      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
+      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '6914b26119906a83ee39c653659a84d5',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script
+          src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
+          strategy="afterInteractive"
+        />
       </div>
     </PageShell>
   );
@@ -207,10 +225,15 @@ function CategoryView({
 
   return (
     <PageShell lang={lang}>
-      {/* ── Adsterra: Leaderboard ──────────────────────────────────────────
-      ─────────────────────────────────────────────────────────────────────── */}
+      {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        {/* <script async src="//your-adsterra-leaderboard-script.js"></script> */}
+        <script
+          async
+          data-cfasync="false"
+          src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
+          strategy="afterInteractive"
+        />
+        <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
       </div>
 
       <div className="hero">
@@ -242,6 +265,27 @@ function CategoryView({
             </Link>
           );
         })}
+      </div>
+
+      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
+      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '6914b26119906a83ee39c653659a84d5',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script
+          src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
+          strategy="afterInteractive"
+        />
       </div>
 
       <p className="section-title">
@@ -310,16 +354,16 @@ function ConversionView({
         </ol>
       </nav>
 
-      {/* ── Adsterra: Leaderboard top ─────────────────────────────────────
-      ─────────────────────────────────────────────────────────────────────── */}
+      {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        {/* <script async src="//your-adsterra-leaderboard-script.js"></script> */}
+        <script
+          async
+          data-cfasync="false"
+          src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
+          strategy="afterInteractive"
+        />
+        <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
       </div>
-
-      {/* ── Adsterra: Pop-under ───────────────────────────────────────────
-          PASTE YOUR ADSTERRA POP-UNDER SCRIPT HERE (loads once per session):
-      ────────────────────────────────────────────────────────────────────── */}
-      {/* <script async src="//your-adsterra-popunder-script.js"></script> */}
 
       <div className="hero">
         {region && <div className="region-badge">📍 {region.label[lang]}</div>}
@@ -415,6 +459,27 @@ function ConversionView({
         })}
       </div>
 
+      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
+      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '6914b26119906a83ee39c653659a84d5',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script
+          src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
+          strategy="afterInteractive"
+        />
+      </div>
+
       {/* Region pages for this conversion */}
       {!region && (
         <>
@@ -437,12 +502,6 @@ function ConversionView({
           </div>
         </>
       )}
-
-      {/* ── Adsterra: Footer Banner ────────────────────────────────────────
-      ─────────────────────────────────────────────────────────────────────── */}
-      <div className="ad-slot ad-slot--footer" aria-label="Advertisement">
-        {/* <script async src="//your-adsterra-footer-script.js"></script> */}
-      </div>
 
       {/* Structured data for rich snippets */}
       <script
