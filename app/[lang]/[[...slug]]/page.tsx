@@ -2,6 +2,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Script from "next/script";
+import type { ReactNode } from "react";
 import {
   SUPPORTED_LANGS, CATEGORIES, UNITS_BY_CATEGORY, REGIONS,
   UI_STRINGS, getCategoryBySlug, getUnitBySlug, getRegionBySlug,
@@ -130,7 +132,7 @@ function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
     <PageShell lang={lang}>
       {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <script
+        <Script
           async
           data-cfasync="false"
           src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
@@ -184,7 +186,7 @@ function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
 
       {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
       <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               atOptions = {
@@ -197,7 +199,7 @@ function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
             `,
           }}
         />
-        <script
+        <Script
           src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
           strategy="afterInteractive"
         />
@@ -227,7 +229,7 @@ function CategoryView({
     <PageShell lang={lang}>
       {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <script
+        <Script
           async
           data-cfasync="false"
           src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
@@ -269,7 +271,7 @@ function CategoryView({
 
       {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
       <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               atOptions = {
@@ -282,7 +284,7 @@ function CategoryView({
             `,
           }}
         />
-        <script
+        <Script
           src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
           strategy="afterInteractive"
         />
@@ -356,7 +358,7 @@ function ConversionView({
 
       {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <script
+        <Script
           async
           data-cfasync="false"
           src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
@@ -461,7 +463,7 @@ function ConversionView({
 
       {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
       <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               atOptions = {
@@ -474,7 +476,7 @@ function ConversionView({
             `,
           }}
         />
-        <script
+        <Script
           src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
           strategy="afterInteractive"
         />

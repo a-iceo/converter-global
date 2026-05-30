@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import {
   SUPPORTED_LANGS, CATEGORIES, UNITS_BY_CATEGORY,
   UI_STRINGS, type Lang,
@@ -28,7 +29,7 @@ export default function RootPage() {
       <main>
         {/* Adsterra Native Banner (Leaderboard top) */}
         <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-          <script
+          <Script
             async
             data-cfasync="false"
             src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
@@ -57,7 +58,7 @@ export default function RootPage() {
 
         {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
         <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-          <script
+          <Script
             dangerouslySetInnerHTML={{
               __html: `
                 atOptions = {
@@ -69,8 +70,9 @@ export default function RootPage() {
                 };
               `,
             }}
+            strategy="afterInteractive"
           />
-          <script
+          <Script
             src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
             strategy="afterInteractive"
           />
