@@ -4,13 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Unit Converter Global",
   description: "Fast, accurate unit conversions in 10 languages",
+  verification: {
+    google: "bYtU1NUr1KSo1e0UBMcxEKNFAY9YqmgVFlWWg05kxF0",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
-        <meta name="google-site-verification" content="bYtU1NUr1KSo1e0UBMcxEKNFAY9YqmgVFlWWg05kxF0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
