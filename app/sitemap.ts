@@ -28,9 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // ── All conversion combos (~30k) ──
+  // ─── All conversion combos (~30k) ──
   let count = 0;
-  for (const combo of allCombinations()) {
+  const combinations = Array.from(allCombinations());
+  for (const combo of combinations) {
     entries.push({
       url: `${BASE_URL}/${combo.lang}/${combo.categorySlug}/${combo.fromUnitSlug}/${combo.toUnitSlug}/${combo.regionSlug}`,
       lastModified: now,
