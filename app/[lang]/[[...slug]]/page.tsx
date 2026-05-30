@@ -2,8 +2,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
-import type { ReactNode } from "react";
 import {
   SUPPORTED_LANGS, CATEGORIES, UNITS_BY_CATEGORY, REGIONS,
   UI_STRINGS, getCategoryBySlug, getUnitBySlug, getRegionBySlug,
@@ -130,8 +128,10 @@ export default function Page({ params }: { params: Params }) {
 function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
   return (
     <PageShell lang={lang}>
+      {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <Script
+        <script
+          async
           data-cfasync="false"
           src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
           strategy="afterInteractive"
@@ -182,17 +182,22 @@ function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
         })}
       </div>
 
+      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
       <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <Script id="adsterra-300x250-options-home" strategy="afterInteractive">{`
-          window.atOptions = {
-            key: "6914b26119906a83ee39c653659a84d5",
-            format: "iframe",
-            height: 250,
-            width: 300,
-            params: {}
-          };
-        `}</Script>
-        <Script
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '6914b26119906a83ee39c653659a84d5',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script
           src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
           strategy="afterInteractive"
         />
@@ -220,8 +225,10 @@ function CategoryView({
 
   return (
     <PageShell lang={lang}>
+      {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <Script
+        <script
+          async
           data-cfasync="false"
           src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
           strategy="afterInteractive"
@@ -260,17 +267,22 @@ function CategoryView({
         })}
       </div>
 
+      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
       <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <Script id="adsterra-300x250-options-category" strategy="afterInteractive">{`
-          window.atOptions = {
-            key: "6914b26119906a83ee39c653659a84d5",
-            format: "iframe",
-            height: 250,
-            width: 300,
-            params: {}
-          };
-        `}</Script>
-        <Script
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '6914b26119906a83ee39c653659a84d5',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script
           src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
           strategy="afterInteractive"
         />
@@ -342,8 +354,10 @@ function ConversionView({
         </ol>
       </nav>
 
+      {/* Adsterra Native Banner (Leaderboard top) */}
       <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <Script
+        <script
+          async
           data-cfasync="false"
           src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
           strategy="afterInteractive"
@@ -415,6 +429,12 @@ function ConversionView({
         </table>
       </div>
 
+      {/* ── Adsterra: Rectangle mid-page ──────────────────────────────────
+      ─────────────────────────────────────────────────────────────────────── */}
+      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement">
+        {/* <script async src="//your-adsterra-rectangle-script.js"></script> */}
+      </div>
+
       {/* Related conversions */}
       <p className="section-title">
         {ui.from} <span>{fromUnit.label[lang]}</span>
@@ -439,17 +459,22 @@ function ConversionView({
         })}
       </div>
 
+      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
       <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <Script id="adsterra-300x250-options-conversion" strategy="afterInteractive">{`
-          window.atOptions = {
-            key: "6914b26119906a83ee39c653659a84d5",
-            format: "iframe",
-            height: 250,
-            width: 300,
-            params: {}
-          };
-        `}</Script>
-        <Script
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '6914b26119906a83ee39c653659a84d5',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+        <script
           src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
           strategy="afterInteractive"
         />
@@ -503,7 +528,7 @@ function ConversionView({
 }
 
 // ─── Shell ────────────────────────────────────────────────────────────────────
-function PageShell({ lang, children }: { lang: Lang; children: ReactNode }) {
+function PageShell({ lang, children }: { lang: Lang; children: React.ReactNode }) {
   const ui = UI_STRINGS[lang];
   return (
     <div className="page-wrap">

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,7 +9,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
@@ -21,7 +19,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
           rel="stylesheet"
         />
-        <Script
+        {/* Adsterra Social Bar */}
+        <script
           src="https://pl29594822.effectivecpmnetwork.com/db/7e/91/db7e9195b032e7b8397e2a8601cbd164.js"
           strategy="afterInteractive"
         />
