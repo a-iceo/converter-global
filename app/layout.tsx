@@ -20,13 +20,44 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
           rel="stylesheet"
         />
+
         {/* Adsterra Social Bar */}
         <Script
           src="https://pl29594822.effectivecpmnetwork.com/db/7e/91/db7e9195b032e7b8397e2a8601cbd164.js"
           strategy="afterInteractive"
         />
+
+        {/* ══════════════════════════════════════
+            ADCASH — Script principal (requerido
+            para validación y para que AutoTag
+            funcione)
+            ══════════════════════════════════════ */}
+        <Script
+          src="https://static.adcash.com/js/aclib.js"
+          strategy="afterInteractive"
+        />
       </head>
-      <body>{children}</body>
+
+      <body>
+        {children}
+
+        {/* ══════════════════════════════════════
+            ADCASH AUTOTAG — Antes del </body>
+            Activa pop-under, interstitial,
+            in-page push y banner automáticamente
+            ══════════════════════════════════════ */}
+        <Script
+          id="adcash-autotag"
+          strategy="afterInteractive"
+        >
+          {`
+            aclib.runAutoTag({
+              zoneId: 'zp7ms03apl',
+            });
+          `}
+        </Script>
+
+      </body>
     </html>
   );
 }
