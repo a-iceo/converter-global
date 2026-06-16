@@ -28,34 +28,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
 
         {/* ══════════════════════════════════════
-            ADCASH — Script principal (requerido
-            para validación y para que AutoTag
-            funcione)
+            ADCASH — Librería principal
+            CDN oficial: acscdn.com
             ══════════════════════════════════════ */}
         <Script
-          src="https://static.adcash.com/js/aclib.js"
+          id="aclib"
+          src="//acscdn.com/script/aclib.js"
           strategy="afterInteractive"
         />
-      </head>
 
+      </head>
       <body>
         {children}
 
         {/* ══════════════════════════════════════
             ADCASH AUTOTAG — Antes del </body>
-            Activa pop-under, interstitial,
-            in-page push y banner automáticamente
+            zoneId: htpmzkhvix (converter-global)
             ══════════════════════════════════════ */}
         <Script
           id="adcash-autotag"
           strategy="afterInteractive"
-        >
-          {`
-            aclib.runAutoTag({
-              zoneId: 'zp7ms03apl',
-            });
-          `}
-        </Script>
+          dangerouslySetInnerHTML={{
+            __html: `
+              aclib.runAutoTag({
+                zoneId: 'htpmzkhvix',
+              });
+            `,
+          }}
+        />
 
       </body>
     </html>
