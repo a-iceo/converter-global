@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://pl29594822.effectivecpmnetwork.com/db/7e/91/db7e9195b032e7b8397e2a8601cbd164.js"
           strategy="afterInteractive"
         />
-
+<meta name="google-adsense-account" content="ca-pub-9493845506774755">
         {/* ══════════════════════════════════════
             ADCASH — Librería principal
             CDN oficial: acscdn.com
