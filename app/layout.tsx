@@ -27,24 +27,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
 
-        {/* ══════════════════════════════════════
-            ADCASH — Librería principal
-            CDN oficial: acscdn.com
-            ══════════════════════════════════════ */}
+        {/* ADCASH — Librería principal */}
         <Script
           id="aclib"
           src="//acscdn.com/script/aclib.js"
           strategy="afterInteractive"
         />
 
+        {/* Google AdSense */}
+        <Script
+          id="adsbygoogle-init"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9493845506774755"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         {children}
-
-        
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9493845506774755"
-     crossorigin="anonymous"></script>
-
       </body>
     </html>
   );
