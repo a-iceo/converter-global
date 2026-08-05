@@ -41,21 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
 
-        {/* ══════════════════════════════════════
-            ADCASH AUTOTAG — Antes del </body>
-            zoneId: htpmzkhvix (converter-global)
-            ══════════════════════════════════════ */}
-        <Script
-          id="adcash-autotag"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              aclib.runAutoTag({
-                zoneId: 'htpmzkhvix',
-              });
-            `,
-          }}
-        />
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9493845506774755"
+     crossorigin="anonymous"></script>
 
       </body>
     </html>
