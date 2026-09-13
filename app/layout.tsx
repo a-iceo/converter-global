@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html>
       <head>
-        <meta name="monetag" content="d483ebd76c3e8a6d1978a7b0da01427a">
+        <meta name="monetag" content="d483ebd76c3e8a6d1978a7b0da01427a" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
