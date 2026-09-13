@@ -22,28 +22,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
 
-        {/* Adsterra Social Bar */}
-        <Script
-          src="https://pl29594822.effectivecpmnetwork.com/db/7e/91/db7e9195b032e7b8397e2a8601cbd164.js"
-          strategy="afterInteractive"
-        />
-
-        {/* ADCASH — Librería principal */}
-        <Script
-          id="aclib"
-          src="//acscdn.com/script/aclib.js"
-          strategy="afterInteractive"
-        />
-
-        {/* Google AdSense */}
-        <Script
-          id="adsbygoogle-init"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9493845506774755"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
         {/* Monetag — Vignette Banner (zone 11794955) */}
         <Script
           id="monetag-vignette"
