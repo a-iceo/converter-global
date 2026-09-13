@@ -2,11 +2,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
 import type { ReactNode } from "react";
 import {
   SUPPORTED_LANGS, CATEGORIES, UNITS_BY_CATEGORY, REGIONS,
-  UI_STRINGS, getCategoryBySlug, getUnitBySlug, getRegionBySlug,
+  UI_STRINGS, CATEGORY_INFO, getCategoryBySlug, getUnitBySlug, getRegionBySlug,
   convertValue, buildFormula, type Lang,
 } from "@/lib/config";
 
@@ -130,17 +129,6 @@ export default function Page({ params }: { params: Params }) {
 function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
   return (
     <PageShell lang={lang}>
-      {/* Adsterra Native Banner (Leaderboard top) */}
-      <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <Script
-          async
-          data-cfasync="false"
-          src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
-          strategy="afterInteractive"
-        />
-        <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
-      </div>
-
       <div className="hero">
         <p className="hero-category-pill">🌍 {SUPPORTED_LANGS.length} languages · {CATEGORIES.length} categories</p>
         <h1>{ui.title.split(" ").map((w, i) =>
@@ -183,27 +171,6 @@ function HomeView({ lang, ui }: { lang: Lang; ui: typeof UI_STRINGS[Lang] }) {
           ));
         })}
       </div>
-
-      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
-      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-              atOptions = {
-                'key' : '6914b26119906a83ee39c653659a84d5',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            `,
-          }}
-        />
-        <Script
-          src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
-          strategy="afterInteractive"
-        />
-      </div>
     </PageShell>
   );
 }
@@ -227,17 +194,6 @@ function CategoryView({
 
   return (
     <PageShell lang={lang}>
-      {/* Adsterra Native Banner (Leaderboard top) */}
-      <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <Script
-          async
-          data-cfasync="false"
-          src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
-          strategy="afterInteractive"
-        />
-        <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
-      </div>
-
       <div className="hero">
         <p className="hero-category-pill">{cat.icon} {cat.label[lang]}</p>
         <h1>
@@ -267,27 +223,6 @@ function CategoryView({
             </Link>
           );
         })}
-      </div>
-
-      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
-      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-              atOptions = {
-                'key' : '6914b26119906a83ee39c653659a84d5',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            `,
-          }}
-        />
-        <Script
-          src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
-          strategy="afterInteractive"
-        />
       </div>
 
       <p className="section-title">
@@ -339,6 +274,8 @@ function ConversionView({
     { label: `${fromUnit.label[lang]} → ${toUnit.label[lang]}`, href: "#" },
   ];
 
+  const aboutText = CATEGORY_INFO[cat.key][lang];
+
   return (
     <PageShell lang={lang}>
       {/* Breadcrumb for SEO */}
@@ -355,17 +292,6 @@ function ConversionView({
           ))}
         </ol>
       </nav>
-
-      {/* Adsterra Native Banner (Leaderboard top) */}
-      <div className="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-        <Script
-          async
-          data-cfasync="false"
-          src="https://pl29594823.effectivecpmnetwork.com/edfbf32ab62eebc9b7cea323868d7ace/invoke.js"
-          strategy="afterInteractive"
-        />
-        <div id="container-edfbf32ab62eebc9b7cea323868d7ace"></div>
-      </div>
 
       <div className="hero">
         {region && <div className="region-badge">📍 {region.label[lang]}</div>}
@@ -431,10 +357,14 @@ function ConversionView({
         </table>
       </div>
 
-      {/* ── Adsterra: Rectangle mid-page ──────────────────────────────────
-      ─────────────────────────────────────────────────────────────────────── */}
-      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement">
-        {/* <script async src="//your-adsterra-rectangle-script.js"></script> */}
+      {/* About this category — unique contextual content (real-world use cases) */}
+      <div className="converter-card" style={{ marginTop: "1.5rem" }}>
+        <p className="section-title" style={{ marginTop: 0 }}>
+          <span>{cat.label[lang]}</span>
+        </p>
+        <p style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "var(--muted)" }}>
+          {aboutText}
+        </p>
       </div>
 
       {/* Related conversions */}
@@ -459,27 +389,6 @@ function ConversionView({
             </Link>
           );
         })}
-      </div>
-
-      {/* Adsterra Banner 300x250 (Rectangle mid-page) */}
-      <div className="ad-slot ad-slot--rectangle" aria-label="Advertisement" style={{ textAlign: "center" }}>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-              atOptions = {
-                'key' : '6914b26119906a83ee39c653659a84d5',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            `,
-          }}
-        />
-        <Script
-          src="https://www.highperformanceformat.com/6914b26119906a83ee39c653659a84d5/invoke.js"
-          strategy="afterInteractive"
-        />
       </div>
 
       {/* Region pages for this conversion */}
