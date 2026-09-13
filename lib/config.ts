@@ -219,6 +219,72 @@ export const CATEGORIES: CategoryMeta[] = [
   },
 ];
 
+// ─── Category contextual descriptions (unique per-category content) ──────────
+// Rendered once per conversion page to give templated pages genuine, non-thin
+// content (why this category matters, common real-world use cases).
+export const CATEGORY_INFO: Record<CategoryKey, Record<Lang, string>> = {
+  currency: {
+    en: "Currency conversion is used daily for travel budgeting, online shopping from foreign stores, freelance invoicing, and remittances. Exchange rates shift constantly with market conditions, so always confirm the live rate with your bank or card provider before a real transaction.",
+    es: "La conversión de divisas se usa a diario para presupuestar viajes, comprar en tiendas extranjeras, facturar como freelancer y enviar remesas. Los tipos de cambio cambian constantemente según el mercado, así que confirmá siempre la tasa vigente con tu banco antes de una transacción real.",
+    fr: "La conversion de devises sert au quotidien pour budgétiser un voyage, acheter dans des boutiques étrangères, facturer en freelance ou envoyer de l'argent à l'étranger. Les taux de change évoluent en permanence, confirmez toujours le taux réel auprès de votre banque avant une transaction.",
+    de: "Währungsumrechnung wird täglich für Reisebudgets, Einkäufe bei ausländischen Shops, Freelancer-Rechnungen und Geldüberweisungen genutzt. Wechselkurse ändern sich ständig — bestätigen Sie vor einer echten Transaktion immer den aktuellen Kurs bei Ihrer Bank.",
+    pt: "A conversão de moedas é usada diariamente para orçar viagens, comprar em lojas estrangeiras, faturar como freelancer e enviar remessas. As taxas de câmbio mudam constantemente conforme o mercado, então confirme sempre a taxa vigente com seu banco antes de uma transação real.",
+    it: "La conversione valutaria si usa ogni giorno per pianificare viaggi, acquistare da negozi esteri, fatturare come freelance e inviare rimesse. I tassi di cambio cambiano continuamente in base al mercato: verifica sempre il tasso reale con la tua banca prima di una transazione.",
+    nl: "Valutaomrekening wordt dagelijks gebruikt voor reisbudgetten, aankopen bij buitenlandse winkels, freelance facturering en geldovermakingen. Wisselkoersen veranderen voortdurend, bevestig daarom altijd de actuele koers bij je bank vóór een echte transactie.",
+    ru: "Конвертация валют используется ежедневно для бюджета путешествий, покупок в иностранных магазинах, фриланс-счетов и денежных переводов. Курсы валют постоянно меняются, поэтому перед реальной операцией всегда уточняйте актуальный курс в своём банке.",
+    zh: "货币换算常用于旅行预算、海外网购、自由职业开票和汇款。汇率会随市场实时波动，实际交易前请务必向银行或支付机构确认最新汇率。",
+    ja: "通貨換算は旅行の予算計画、海外通販、フリーランスの請求書作成、送金などで日常的に使われます。為替レートは常に変動するため、実際の取引前には必ず銀行やカード会社で最新レートを確認してください。",
+  },
+  length: {
+    en: "Length conversions come up in construction plans, furniture shopping, fitness tracking, and international recipes or DIY projects that mix metric and imperial units. Getting the unit right matters most when ordering materials or comparing product dimensions across countries.",
+    es: "Las conversiones de longitud aparecen en planos de construcción, compras de muebles, seguimiento fitness y recetas o proyectos DIY internacionales que mezclan el sistema métrico e imperial. Acertar la unidad es clave al pedir materiales o comparar dimensiones de productos entre países.",
+    fr: "Les conversions de longueur interviennent dans les plans de construction, l'achat de meubles, le suivi sportif et les recettes ou projets DIY internationaux mélangeant système métrique et impérial. Bien choisir l'unité est essentiel pour commander des matériaux ou comparer des dimensions entre pays.",
+    de: "Längenumrechnungen sind wichtig bei Bauplänen, Möbelkäufen, Fitness-Tracking und internationalen Rezepten oder DIY-Projekten, die metrische und imperiale Einheiten mischen. Die richtige Einheit ist entscheidend bei Materialbestellungen oder Produktvergleichen zwischen Ländern.",
+    pt: "As conversões de comprimento aparecem em plantas de construção, compras de móveis, monitoramento fitness e receitas ou projetos DIY internacionais que misturam sistema métrico e imperial. Acertar a unidade é essencial ao pedir materiais ou comparar dimensões de produtos entre países.",
+    it: "Le conversioni di lunghezza servono per progetti edili, acquisto di mobili, monitoraggio fitness e ricette o progetti fai-da-te internazionali che mescolano sistema metrico e imperiale. Scegliere l'unità giusta è fondamentale quando si ordinano materiali o si confrontano dimensioni tra paesi.",
+    nl: "Lengteomrekeningen komen voor bij bouwplannen, meubelaankopen, fitness-tracking en internationale recepten of doe-het-zelfprojecten die metrisch en imperiaal mengen. De juiste eenheid is cruciaal bij het bestellen van materialen of het vergelijken van productafmetingen tussen landen.",
+    ru: "Перевод единиц длины нужен при строительных чертежах, покупке мебели, фитнес-трекинге и международных рецептах или DIY-проектах, где смешаны метрическая и имперская системы. Правильная единица особенно важна при заказе материалов или сравнении размеров товаров из разных стран.",
+    zh: "长度换算常用于建筑图纸、家具购买、健身记录，以及混用公制和英制单位的国际食谱或DIY项目。订购材料或比较不同国家的产品尺寸时，单位准确尤为重要。",
+    ja: "長さの換算は建築図面、家具の購入、フィットネスの記録、メートル法とヤード・ポンド法が混在する海外のレシピやDIYプロジェクトなどで必要になります。資材を注文したり、国をまたいで製品寸法を比較する際は、単位を正確に合わせることが特に重要です。",
+  },
+  weight: {
+    en: "Weight conversions are essential for cooking with international recipes, shipping and postage calculations, gym and nutrition tracking, and comparing product sizes sold in different units abroad. Small rounding differences can matter a lot in baking or medication dosing.",
+    es: "Las conversiones de peso son esenciales para cocinar con recetas internacionales, calcular envíos y franqueo, seguimiento de gimnasio y nutrición, y comparar tamaños de productos vendidos en otras unidades en el exterior. Pequeñas diferencias de redondeo pueden importar mucho en repostería o dosis de medicamentos.",
+    fr: "Les conversions de poids sont essentielles pour cuisiner avec des recettes internationales, calculer les frais d'expédition, suivre son alimentation et sa musculation, et comparer des produits vendus dans d'autres unités à l'étranger. De petits écarts d'arrondi peuvent compter en pâtisserie ou pour un dosage médical.",
+    de: "Gewichtsumrechnungen sind wichtig beim Kochen nach internationalen Rezepten, bei Versand- und Portoberechnungen, beim Fitness- und Ernährungstracking sowie beim Vergleich von Produktgrößen im Ausland. Kleine Rundungsunterschiede können beim Backen oder bei Medikamentendosierungen entscheidend sein.",
+    pt: "As conversões de peso são essenciais para cozinhar com receitas internacionais, calcular frete e postagem, monitorar treino e nutrição, e comparar tamanhos de produtos vendidos em outras unidades no exterior. Pequenas diferenças de arredondamento podem importar muito em confeitaria ou dosagem de medicamentos.",
+    it: "Le conversioni di peso sono fondamentali per cucinare con ricette internazionali, calcolare spedizioni e affrancature, monitorare palestra e nutrizione, e confrontare taglie di prodotti venduti in altre unità all'estero. Piccole differenze di arrotondamento contano molto in pasticceria o nel dosaggio dei farmaci.",
+    nl: "Gewichtsomrekeningen zijn essentieel bij koken met internationale recepten, verzend- en portoberekeningen, fitness- en voedingstracking, en het vergelijken van productmaten die in het buitenland in andere eenheden worden verkocht. Kleine afrondingsverschillen kunnen bij bakken of medicijndosering veel uitmaken.",
+    ru: "Перевод единиц веса необходим при готовке по зарубежным рецептам, расчёте доставки и почтовых расходов, отслеживании тренировок и питания, а также сравнении размеров товаров, продаваемых за рубежом в других единицах. Небольшие погрешности округления могут быть критичны в выпечке или дозировке лекарств.",
+    zh: "重量换算在使用国际食谱烹饪、计算运费和邮资、健身与营养记录，以及比较国外以不同单位销售的商品规格时必不可少。烘焙或药物剂量中，微小的四舍五入误差也可能影响很大。",
+    ja: "重量換算は、海外レシピでの調理、配送・郵送料金の計算、フィットネスや栄養管理の記録、海外で異なる単位で販売されている商品サイズの比較などに欠かせません。製菓や薬の服用量では、わずかな丸め誤差が大きな違いを生むこともあります。",
+  },
+  temperature: {
+    en: "Temperature conversions matter for reading weather forecasts abroad, following oven instructions in international recipes, understanding medical thermometer readings, and industrial or scientific measurements. Celsius and Fahrenheit scales are not proportional, so simple multiplication does not work — always use the correct formula.",
+    es: "Las conversiones de temperatura importan para leer pronósticos del clima en el extranjero, seguir instrucciones de horno en recetas internacionales, entender lecturas de termómetros médicos y mediciones industriales o científicas. Celsius y Fahrenheit no son proporcionales, así que una simple multiplicación no funciona — usá siempre la fórmula correcta.",
+    fr: "Les conversions de température sont utiles pour lire la météo à l'étranger, suivre les instructions de four dans des recettes internationales, comprendre les relevés de thermomètre médical et les mesures industrielles ou scientifiques. Celsius et Fahrenheit ne sont pas proportionnels : une simple multiplication ne suffit pas, utilisez toujours la formule correcte.",
+    de: "Temperaturumrechnungen sind wichtig, um Wettervorhersagen im Ausland zu verstehen, Ofenangaben in internationalen Rezepten zu folgen, medizinische Thermometerwerte zu deuten und für industrielle oder wissenschaftliche Messungen. Celsius und Fahrenheit sind nicht proportional — eine einfache Multiplikation funktioniert nicht, verwenden Sie immer die richtige Formel.",
+    pt: "As conversões de temperatura importam para ler previsões do tempo no exterior, seguir instruções de forno em receitas internacionais, entender leituras de termômetro médico e medições industriais ou científicas. Celsius e Fahrenheit não são proporcionais, então uma simples multiplicação não funciona — use sempre a fórmula correta.",
+    it: "Le conversioni di temperatura contano per leggere le previsioni meteo all'estero, seguire le istruzioni del forno in ricette internazionali, capire le letture del termometro medico e le misurazioni industriali o scientifiche. Celsius e Fahrenheit non sono proporzionali: una semplice moltiplicazione non funziona, usa sempre la formula corretta.",
+    nl: "Temperatuuromrekeningen zijn belangrijk bij het lezen van weerberichten in het buitenland, het volgen van oveninstructies in internationale recepten, het begrijpen van medische thermometerwaarden en industriële of wetenschappelijke metingen. Celsius en Fahrenheit zijn niet proportioneel — een simpele vermenigvuldiging werkt niet, gebruik altijd de juiste formule.",
+    ru: "Перевод температур важен при чтении зарубежных прогнозов погоды, следовании инструкциям духовки в иностранных рецептах, понимании показаний медицинского термометра и промышленных или научных измерениях. Цельсий и Фаренгейт не пропорциональны, поэтому простое умножение не подходит — всегда используйте правильную формулу.",
+    zh: "温度换算在查看国外天气预报、按国际食谱使用烤箱、读懂医用体温计数值以及工业或科学测量中都很重要。摄氏度和华氏度不是简单的比例关系，直接相乘并不适用——请务必使用正确的换算公式。",
+    ja: "温度換算は、海外の天気予報を読んだり、海外レシピのオーブン指示に従ったり、体温計の表示を理解したり、産業・科学分野の計測を行ったりする際に重要です。摂氏と華氏は比例関係にないため、単純な掛け算では変換できません。必ず正しい計算式を使ってください。",
+  },
+  volume: {
+    en: "Volume conversions come up constantly in cooking and baking with foreign recipes, fuel and liquid measurements, medical dosing, and shipping or packaging calculations. US and UK units of the same name (like gallon or pint) are not the same size, so always check which system a recipe or spec uses.",
+    es: "Las conversiones de volumen aparecen constantemente en cocina y repostería con recetas extranjeras, medición de combustible y líquidos, dosificación médica y cálculos de envío o empaque. Las unidades de EE.UU. y Reino Unido con el mismo nombre (como galón o pinta) no tienen el mismo tamaño, así que revisá siempre qué sistema usa la receta o especificación.",
+    fr: "Les conversions de volume interviennent constamment en cuisine et pâtisserie avec des recettes étrangères, les mesures de carburant et de liquides, le dosage médical et les calculs d'expédition ou d'emballage. Les unités américaines et britanniques portant le même nom (comme le gallon ou la pinte) n'ont pas la même taille : vérifiez toujours quel système est utilisé.",
+    de: "Volumenumrechnungen sind ständig beim Kochen und Backen mit ausländischen Rezepten, bei Kraftstoff- und Flüssigkeitsmessungen, medizinischer Dosierung und Versand- oder Verpackungsberechnungen gefragt. US- und UK-Einheiten mit gleichem Namen (wie Gallone oder Pint) haben nicht dieselbe Größe — prüfen Sie immer, welches System verwendet wird.",
+    pt: "As conversões de volume aparecem constantemente ao cozinhar e confeitar com receitas estrangeiras, medições de combustível e líquidos, dosagem médica e cálculos de envio ou embalagem. Unidades dos EUA e do Reino Unido com o mesmo nome (como galão ou pinta) não têm o mesmo tamanho, então sempre verifique qual sistema a receita ou especificação usa.",
+    it: "Le conversioni di volume ricorrono spesso in cucina e pasticceria con ricette straniere, misurazioni di carburante e liquidi, dosaggio medico e calcoli di spedizione o imballaggio. Le unità USA e UK con lo stesso nome (come gallone o pinta) non hanno la stessa dimensione: verifica sempre quale sistema viene usato.",
+    nl: "Volumeomrekeningen komen voortdurend voor bij koken en bakken met buitenlandse recepten, brandstof- en vloeistofmetingen, medische dosering en verzend- of verpakkingsberekeningen. Amerikaanse en Britse eenheden met dezelfde naam (zoals gallon of pint) hebben niet dezelfde grootte — controleer altijd welk systeem wordt gebruikt.",
+    ru: "Перевод объёма постоянно нужен при готовке и выпечке по зарубежным рецептам, измерении топлива и жидкостей, медицинской дозировке и расчётах доставки или упаковки. Американские и британские единицы с одинаковым названием (например, галлон или пинта) имеют разный размер — всегда проверяйте, какая система используется.",
+    zh: "体积换算在使用国外食谱烹饪烘焙、燃料和液体计量、医疗剂量以及运输包装计算中经常用到。美制和英制中同名单位（如加仑、品脱）实际大小并不相同，务必先确认配方或规格使用的是哪种体系。",
+    ja: "体積換算は、海外レシピでの調理・製菓、燃料や液体の計量、医療用の投与量、配送や梱包の計算などで頻繁に必要になります。米国とイギリスの同名単位（ガロンやパイントなど）はサイズが異なるため、レシピや仕様がどちらの単位系かを必ず確認してください。",
+  },
+};
+
 // ─── Units ────────────────────────────────────────────────────────────────────
 export interface UnitDef {
   key: string;
