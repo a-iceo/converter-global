@@ -30,6 +30,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(s){s.dataset.zone='11794955',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
           }}
         />
+
+        {/* Monetag — Popunder (zone 11794970) */}
+        <Script
+          id="monetag-popunder"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(s){s.dataset.zone='11794970',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
+          }}
+        />
       </head>
       <body>
         {children}
